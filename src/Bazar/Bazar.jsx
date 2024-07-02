@@ -68,8 +68,8 @@ const Bazar = () => {
 
             </div>
             <div className=" mt-5 flex justify-end gap-2">
-                <button className="btn btn-sm bg-red-400 text-white">Cancel</button>
-                <button className="btn btn-sm bg-green-400 text-white">Add</button>
+                <button className="btn btn-md bg-red-400 text-white">Cancel</button>
+                <button className="btn btn-md bg-green-400 text-white">Add</button>
             </div>
             <div className={visible?"bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen h-screen flex justify-center items-center" : "hidden"}>
                 <div className="bg-white rounded-md p-3 w-[90%] mb-60">
@@ -108,8 +108,8 @@ const Bazar = () => {
                     </div>
                     
                     <div className=" mt-5 flex justify-end gap-2">
-                        <button onClick={()=>setVisible2(false)} className="btn btn-sm bg-red-400 text-white">Cancel</button>
-                        <button className="btn btn-sm bg-green-400 text-white">Add</button>
+                        <button onClick={()=>setVisible2(false)} className="btn btn-md bg-red-400 text-white">Cancel</button>
+                        <button className="btn btn-md bg-green-400 text-white">Add</button>
                     </div>
                 </div>
             </div>
