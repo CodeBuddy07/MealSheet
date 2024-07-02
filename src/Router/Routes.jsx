@@ -11,17 +11,18 @@ const Routes = createBrowserRouter([
       path: "/",
       element: <Root></Root>,
       children: [
+       
         {
           path: "/",
+          element: <Bazar></Bazar>,
+        },
+        {
+          path: "/bazar",
           element: <Home></Home>,
         },
         {
           path: "/dashboard",
           element: <UserDashboard></UserDashboard>,
-        },
-        {
-          path: "/bazar",
-          element: <Bazar></Bazar>,
         },
       ]
     }
