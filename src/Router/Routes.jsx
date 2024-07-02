@@ -14,11 +14,11 @@ const Routes = createBrowserRouter([
        
         {
           path: "/",
-          element: <Bazar></Bazar>,
+          element: <Home></Home>,
         },
         {
           path: "/bazar",
-          element: <Home></Home>,
+          element: <Bazar></Bazar>,
         },
         {
           path: "/dashboard",

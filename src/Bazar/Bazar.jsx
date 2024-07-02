@@ -72,7 +72,7 @@ const Bazar = () => {
                 <button className="btn btn-sm bg-green-400 text-white">Add</button>
             </div>
             <div className={visible?"bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen h-screen flex justify-center items-center" : "hidden"}>
-                <div className="bg-white rounded-md p-3 w-[90%]">
+                <div className="bg-white rounded-md p-3 w-[90%] mb-20">
                     <div className="w-full text-center my-5">
                         <h1 className="font-semibold">{item}</h1>
                     </div>
