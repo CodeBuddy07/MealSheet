@@ -1,0 +1,84 @@
+[
+  {
+    "user_id": 1,
+    "data": [
+      {
+        "date": "2024-03-03",
+        "day_meal": 1,
+        "night_meal": 3,
+        "guest_day_meal": 3,
+        "guest_night_meal": 30.50
+      },
+      {
+        "date": "2024-03-04",
+        "day_meal": 1,
+        "night_meal": 3,
+        "guest_day_meal": 4,
+        "guest_night_meal": 28.00
+      }
+    ]
+  },
+  {
+    "user_id": 2,
+    "data": [
+      {
+        "date": "2024-03-03",
+        "day_meal": 2,
+        "night_meal": 3,
+        "guest_day_meal": 3,
+        "guest_night_meal": 35.00
+      },
+      {
+        "date": "2024-05-04",
+        "day_meal": 2,
+        "night_meal": 3,
+        "guest_day_meal": 4,
+        "guest_night_meal": 32.50
+      }
+    ]
+  },
+  {
+    "user_id": 3,
+    "data": [
+      {
+        "date": "2024-05-03",
+        "day_meal": 3,
+        "night_meal": 3,
+        "guest_day_meal": 3,
+        "guest_night_meal": 23.00
+      },
+      {
+        "date": "2024-03-04",
+        "day_meal": 3,
+        "night_meal": 3,
+        "guest_day_meal": 4,
+        "guest_night_meal": 30.50
+      },{
+        "date": "2024-05-23",
+        "day_meal": 3,
+        "night_meal": 3,
+        "guest_day_meal": 3,
+        "guest_night_meal": 23.00
+      }
+    ]
+  },
+  {
+    "user_id": 4,
+    "data": [
+      {
+        "date": "2024-03-03",
+        "day_meal": 4,
+        "night_meal": 3,
+        "guest_day_meal": 3,
+        "guest_night_meal": 33.00
+      },
+      {
+        "date": "2024-05-04",
+        "day_meal": 4,
+        "night_meal": 3,
+        "guest_day_meal": 4,
+        "guest_night_meal": 36.50
+      }
+    ]
+  }
+]
