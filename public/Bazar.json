@@ -1,0 +1,41 @@
+[
+    {
+        "inventories": [
+            "Rice",
+            "Lentils",
+            "PataGobi"
+        ],
+        "Bazar": [
+            {
+                "Rice": [
+                    {
+                        "date": "2024-07-03",
+                        "quantity" : "3",
+                        "unit" : "Kg",
+                        "price": 195
+                    },
+                    {
+                        "date": "2024-07-01",
+                        "quantity" : "3",
+                        "unit" : "Kg",
+                        "price": 195
+                    }
+                ],
+                "Lentils": [
+                    {
+                        "date": "2024-07-03",
+                        "quantity" : "200",
+                        "unit" : "Gm",
+                        "price": 30
+                    },
+                    {
+                        "date": "2024-07-01",
+                        "quantity" : "120",
+                        "unit" : "gm",
+                        "price": 28
+                    }
+                ]
+            }
+        ]
+    }
+]
