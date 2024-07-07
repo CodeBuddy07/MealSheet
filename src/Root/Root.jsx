@@ -25,7 +25,7 @@ const Root = () => {
                         <label htmlFor="my-drawer" className="drawer-button"><i className="fa-solid fa-lg fa-xmark"></i></label>
                     </div>
 
-                    <div className="w-full p-5 bg-[url('./balanceDivBG.jpg')] bg-cover rounded-md">
+                    <div className="w-full p-5 bg-gradient-to-r from-lime-400 to-lime-500 bg-cover rounded-md">
 
                         <div className="bg-white w-full pr-2 py-2 rounded-md flex justify-start items-center gap-2">
                             <img className="w-10" src="./dollarSign.png" alt="" />
@@ -49,11 +49,12 @@ const Root = () => {
 
 
                     </div>
-                    
+
                     {/* Sidebar content here */}
-                    <li><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-semibold focus:bg-green-200 active:!bg-green-400" : "focus:bg-green-200 active:!bg-green-400"} to={"/"}>Home</NavLink> </li>
-                    <li><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-semibold focus:bg-green-200 active:!bg-green-400" : "focus:bg-green-200 active:!bg-green-400"} to={"/bazar"}>Bazar</NavLink> </li>
-                    <li><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-semibold focus:bg-green-200 active:!bg-green-400" : "focus:bg-green-200 active:!bg-green-400"} to={"/dashboard"}>Dashboard</NavLink> </li>
+                    <li className="mt-2"><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/"}> <i className="fa-solid fa-house"></i> <span className="text-black">Home</span> </NavLink> </li>
+                    <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/bazar"}> <i className="fa-solid fa-bag-shopping"></i> <span className="text-black">Bazar</span> </NavLink> </li>
+                    <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/dashboard"}> <i className="fa-solid fa-table"></i> <span className="text-black">Dashboard</span> </NavLink> </li>
+
 
 
                 </ul>
