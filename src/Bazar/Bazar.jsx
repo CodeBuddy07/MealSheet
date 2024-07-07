@@ -88,7 +88,7 @@ const Bazar = () => {
 
             </div>
             <div className="w-full text-right mt-3 px-2">
-                <p className="text-sm font-semibold">Date: <input type="date" defaultValue={date} id="dateInput" /></p>
+                <p className="text-sm font-semibold">Date: <input className="bg-transparent" type="date" defaultValue={date} id="dateInput" /></p>
             </div>
             <div className={visible3? "bg-yellow-500 bg-opacity-25 p-3 rounded-md shadow-md": "hidden"}>
                 <table className="w-full" >
