@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import UserDashboard from "../UserDashboard/userDashboard";
 import Bazar from "../Bazar/Bazar";
 import Root from "../Root/Root";
+import Bills from "../Bills/Bills";
 
 
 
@@ -23,6 +24,10 @@ const Routes = createBrowserRouter([
         {
           path: "/dashboard",
           element: <UserDashboard></UserDashboard>,
+        },
+        {
+          path: "/bills",
+          element: <Bills></Bills>,
         },
       ]
     }

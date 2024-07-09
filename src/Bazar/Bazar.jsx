@@ -8,6 +8,7 @@ const Bazar = () => {
     const [item, setItem] = useState("");
     const [serial, setSerial] = useState(1);
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState("");
 
     const d = new Date();
     const date = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -74,12 +75,12 @@ const Bazar = () => {
         <div className=" px-5">
             <div className=" bg-[#f7f7f7] rounded-md p-3">
                 <div className="flex justify-center items-center ">
-                    <input className="border w-full bg-gray-200 rounded-full px-3 py-2 shadow-sm" type="search" name="searchBar" placeholder="search here..." />
+                    <input onChange={(e)=>setSearch(e.target.value)} className="border w-full bg-gray-200 rounded-full px-3 py-2 shadow-sm" type="search" name="searchBar" placeholder="search here..." />
                     <button className="bg-gray-200 rounded-full px-3 py-2 ml-2 shadow-sm"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                     {
-                        data[0]?.inventories.map((item, index) => {
+                        data[0]?.inventories.filter((item) => item.toLowerCase().search(search.toLowerCase()) > -1 ).map((item, index) => {
                             return <p key={index} onClick={() => { setVisible(true); setItem(item) }} className="badge bg-gray-300 font-medium">{item}</p>;
                         })
                     }

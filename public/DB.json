@@ -1,6 +1,13 @@
 [
   {
     "user_id": 1,
+    "user_name": "Ruhul Amin",
+    "bills": [
+      {
+        "bill_name" : "Electricity Bill",
+        "status": "true"
+      }
+    ],
     "data": [
       {
         "date": "2024-03-03",
@@ -20,6 +27,13 @@
   },
   {
     "user_id": 2,
+    "user_name": "Mahin Muhtasim",
+    "bills": [
+      {
+        "bill_name" : "Electricity Bill",
+        "status": "false"
+      }
+    ],
     "data": [
       {
         "date": "2024-03-03",
@@ -39,6 +53,13 @@
   },
   {
     "user_id": 3,
+    "user_name": "Alauddin Parvez",
+    "bills": [
+      {
+        "bill_name" : "Electricity Bill",
+        "status": "true"
+      }
+    ],
     "data": [
       {
         "date": "2024-05-03",
@@ -64,6 +85,13 @@
   },
   {
     "user_id": 4,
+    "user_name": "Rakibul Rakib",
+    "bills": [
+      {
+        "bill_name" : "Electricity Bill",
+        "status": "false"
+      }
+    ],
     "data": [
       {
         "date": "2024-03-03",
