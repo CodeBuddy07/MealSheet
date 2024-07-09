@@ -7,6 +7,7 @@ const Home = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [dates, setDates] = useState(generateDatesArray(nowMonth))
+    //const [total, setTotal] = useState(0);
 
     useEffect(() => {
         fetch("./DB.json")
@@ -61,18 +62,26 @@ const Home = () => {
 
         let totalDay = 0;
         const dayCells = document.querySelectorAll(index);
-
         dayCells.forEach(cell => {
             const cellValue = parseFloat(cell.innerText) || 0;
 
             totalDay += cellValue;
-
+            console.log("n", totalDay);
         });
+
 
         console.log(totalDay);
         return totalDay;
 
     }
+
+
+
+    setTimeout(() => {
+        
+        calculateTotal();
+
+    }, 100);
 
 
     function calculateTotal() {
@@ -259,7 +268,7 @@ const Home = () => {
                             {data.map((user, index) => {
 
                                 return <React.Fragment key={index}>
-                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " >{getTotal(`.day${user.user_id}`)}</td>
+                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " >{}</td>
                                     <td id={"nightTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
                                     <td id={"gDayTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
                                     <td id={"gNightTotal" + user.user_id} className="!border-r-0 !border-t-2 !border-black"></td>

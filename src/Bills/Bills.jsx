@@ -58,7 +58,7 @@ const Bills = () => {
 
 
     return (
-        <div className="px-2">
+        <div className="px-5">
             <div>
                 <button onClick={() => setVisible(true)} className="btn bg-slate-200 w-full py-2 font-bold">
                     ADD
