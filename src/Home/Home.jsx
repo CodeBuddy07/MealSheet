@@ -57,19 +57,17 @@ const Home = () => {
 
     }
 
-    function getTotal(index,plot) {
+    function getTotal(index) {
 
-         let a = 0;
-        // const dayCells = document.querySelectorAll(index);
+        let totalDay = 0;
+        const dayCells = document.querySelectorAll(index);
 
-        //     dayCells.forEach(cell => {
-        //         const cellValue = parseFloat(cell.innerText) || 0;
+        dayCells.forEach(cell => {
+            const cellValue = parseFloat(cell.innerText) || 0;
 
-        //         totalDay += cellValue;
-        //     });
-        
-        const totalDay = data[index].data.map(x=> x.day_meal + a)
-       
+            totalDay += cellValue;
+
+        });
 
         console.log(totalDay);
         return totalDay;
@@ -261,7 +259,7 @@ const Home = () => {
                             {data.map((user, index) => {
 
                                 return <React.Fragment key={index}>
-                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " >{getTotal(index,"day_meal")}</td>
+                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " >{getTotal(`.day${user.user_id}`)}</td>
                                     <td id={"nightTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
                                     <td id={"gDayTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
                                     <td id={"gNightTotal" + user.user_id} className="!border-r-0 !border-t-2 !border-black"></td>
