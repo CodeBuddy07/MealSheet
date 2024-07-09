@@ -53,6 +53,71 @@ const Root = () => {
 
                     </div>
 
+                    <div className="text-center my-5 border border-green-500 rounded-md p-3 pb-5 bg-green-100 shadow-md">
+                        <h1 className="text-lg font-bold text-green-500">Meal Order</h1>
+                        <div className="w-full h-[1px] bg-black mt-2"></div>
+                        <div className="mt-3 flex justify-between items-center">
+
+
+
+                            <div>
+                                <div className="form-control w-max">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text font-bold mr-3">DAY</span>
+                                        <input type="checkbox" className="toggle toggle-accent" />
+                                    </label>
+                                </div>
+
+                                <div className="">
+                                    <h2 className="font-semibold ">Guest Count </h2>
+                                    <select defaultValue={0} className="select select-bordered w-full select-xs">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div className="w-[1px] h-16 bg-black"></div>
+
+                            <div>
+                                <div className="form-control w-max">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text font-bold mr-3">NIGHT</span>
+                                        <input type="checkbox" className="toggle toggle-accent" />
+                                    </label>
+                                </div>
+
+                                <div className="">
+                                    <h2 className="font-semibold ">Guest Count </h2>
+                                    <select defaultValue={0} className="select select-bordered w-full select-xs">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                     {/* Sidebar content here */}
                     <li className="mt-2"><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/"}> <i className="fa-solid fa-house"></i> <span className="text-black">Home</span> </NavLink> </li>
                     <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/bazar"}> <i className="fa-solid fa-bag-shopping"></i> <span className="text-black">Bazar</span> </NavLink> </li>

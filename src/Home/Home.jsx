@@ -58,23 +58,6 @@ const Home = () => {
 
     }
 
-    function getTotal(index) {
-
-        let totalDay = 0;
-        const dayCells = document.querySelectorAll(index);
-        dayCells.forEach(cell => {
-            const cellValue = parseFloat(cell.innerText) || 0;
-
-            totalDay += cellValue;
-            console.log("n", totalDay);
-        });
-
-
-        console.log(totalDay);
-        return totalDay;
-
-    }
-
 
 
     setTimeout(() => {
