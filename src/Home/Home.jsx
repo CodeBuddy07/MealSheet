@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LoadingScreen from "../LoadingScreen";
 
 
 const Home = () => {
@@ -63,56 +64,56 @@ const Home = () => {
         for (var i = 0; i < data.length; i++) {
 
 
-           if(document.getElementById("dayTotal" + data[i].user_id)){
-             //Day Total Calculation
-             const dayCells = document.querySelectorAll(`.day${data[i].user_id}`);
-             let totalDay = 0;
-             dayCells.forEach(cell => {
-                 const cellValue = parseFloat(cell.innerText) || 0;
+            if (document.getElementById("dayTotal" + data[i].user_id)) {
+                //Day Total Calculation
+                const dayCells = document.querySelectorAll(`.day${data[i].user_id}`);
+                let totalDay = 0;
+                dayCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
 
-                 totalDay += cellValue;
-             });
-             document.getElementById("dayTotal" + data[i].user_id).innerText= totalDay;
-
-
-             //Night Total Calculation
-             const nightCells = document.querySelectorAll(`.night${data[i].user_id}`);
-             let totalNight = 0;
-             nightCells.forEach(cell => {
-                 const cellValue = parseFloat(cell.innerText) || 0;
-
-                 totalNight += cellValue;
-             });
-             document.getElementById("nightTotal" + data[i].user_id).innerText = totalNight;
+                    totalDay += cellValue;
+                });
+                document.getElementById("dayTotal" + data[i].user_id).innerText = totalDay;
 
 
-             //Guest Day Total Calculation
-             const gDayCells = document.querySelectorAll(`.gDay${data[i].user_id}`);
-             let totalGDay = 0;
-             gDayCells.forEach(cell => {
-                 const cellValue = parseFloat(cell.innerText) || 0;
+                //Night Total Calculation
+                const nightCells = document.querySelectorAll(`.night${data[i].user_id}`);
+                let totalNight = 0;
+                nightCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
 
-                 totalGDay += cellValue;
-             });
-             document.getElementById("gDayTotal" + data[i].user_id).innerText = totalGDay;
+                    totalNight += cellValue;
+                });
+                document.getElementById("nightTotal" + data[i].user_id).innerText = totalNight;
 
 
-             //Guest Night Total Calculation
-             const gNightCells = document.querySelectorAll(`.gNight${data[i].user_id}`);
-             let totalGNight = 0;
-             gNightCells.forEach(cell => {
-                 const cellValue = parseFloat(cell.innerText) || 0;
+                //Guest Day Total Calculation
+                const gDayCells = document.querySelectorAll(`.gDay${data[i].user_id}`);
+                let totalGDay = 0;
+                gDayCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
 
-                 totalGNight += cellValue;
-             });
-             document.getElementById("gNightTotal" + data[i].user_id).innerText = totalGNight;
+                    totalGDay += cellValue;
+                });
+                document.getElementById("gDayTotal" + data[i].user_id).innerText = totalGDay;
 
-             //Day-Night Total & Guest Day-Night Total Calculation
-             document.getElementById("dayNightTotal"+data[i].user_id).innerText = totalDay+totalNight;
-             document.getElementById("gDayNightTotal"+data[i].user_id).innerText = totalGDay+totalGNight;
 
-             document.getElementById("Total"+data[i].user_id).innerText = totalGDay+totalGNight+totalDay+totalNight;
-           }
+                //Guest Night Total Calculation
+                const gNightCells = document.querySelectorAll(`.gNight${data[i].user_id}`);
+                let totalGNight = 0;
+                gNightCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
+
+                    totalGNight += cellValue;
+                });
+                document.getElementById("gNightTotal" + data[i].user_id).innerText = totalGNight;
+
+                //Day-Night Total & Guest Day-Night Total Calculation
+                document.getElementById("dayNightTotal" + data[i].user_id).innerText = totalDay + totalNight;
+                document.getElementById("gDayNightTotal" + data[i].user_id).innerText = totalGDay + totalGNight;
+
+                document.getElementById("Total" + data[i].user_id).innerText = totalGDay + totalGNight + totalDay + totalNight;
+            }
 
 
         }
@@ -155,100 +156,105 @@ const Home = () => {
 
 
     return (
-        <div className="p-5">
-            <input onChange={()=>{calculateTotal(); mealQueryByDate()}} className="input border border-black" type="month" name="monthSelector" defaultValue={new Date().getFullYear().toString() + '-' + (new Date().getMonth() + 1).toString().padStart(2, "0")} />
-            <button className="button bg-green-500 text-white px-7 rounded py-2" onClick={exportTableToExcel}>Export</button>
-            {loading? <p>LOading...</p>: <p></p>}
-            <table hidden={loading?true:false} id="myTable" border={1} className="my-5">
-                <thead className="border *:border *:*:border *:*:px-5 *:*:py-2 border-black text-center">
-                    <tr >
-                        <th rowSpan={2}>Date</th>
-                        {data.map((user, index) => {
-                            return <th key={index} colSpan={4}>{user.user_id}</th>;
+        <div className="p-5 ">
+            <div className="flex justify-between items-center">
+                <input onChange={(e) => { calculateTotal(); mealQueryByDate(e) }} className="input input-sm border border-black" type="month" name="monthSelector" defaultValue={new Date().getFullYear().toString() + '-' + (new Date().getMonth() + 1).toString().padStart(2, "0")} />
+                <button className="btn btn-sm bg-green-500 text-white px-7 rounded py-2" onClick={exportTableToExcel}>Export</button>
+            </div>
+            {loading ? <LoadingScreen></LoadingScreen> : <p></p>}
+            <div className="overflow-scroll rounded-md border border-green-500 mt-2 -mx-5">
+                <table hidden={loading ? true : false} id="myTable" border={1} className="w-full whitespace-nowrap">
+                    <thead className="border *:border *:*:border *:*:px-5 *:*:py-2 border-black text-center">
+                        <tr >
+                            <th rowSpan={2}>Date</th>
+                            {data.map((user, index) => {
+                                return <th key={index} colSpan={4}>{user.user_name}</th>;
+                            })}
+                        </tr>
+                        <tr>
+                            {data.map((user, index) => {
+
+                                return <React.Fragment key={index}>
+
+                                    <td>Day</td>
+                                    <td>Night</td>
+                                    <td>G. Day</td>
+                                    <td>G. Night</td>
+                                </React.Fragment>;
+                            })}
+
+                        </tr>
+                    </thead>
+                    <tbody className="border *:border *:*:border *:*:px-5 *:*:py-2 border-black text-center [&>*:nth-child(odd)]:bg-slate-50">
+
+
+                        {dates.map((date, index) => {
+                            return <tr key={index}>
+                                {
+                                    <>
+                                        <td className=" w-max">{date}</td>
+                                        {data.map((user, index) => {
+
+                                            return <React.Fragment key={index}>
+                                                <td className={"day" + user.user_id}   >{user.data.find((el) => el.date == date)?.day_meal}</td>
+                                                <td className={"night" + user.user_id} >{user.data.find((el) => el.date == date)?.night_meal}</td>
+                                                <td className={"gDay" + user.user_id}  >{user.data.find((el) => el.date == date)?.guest_day_meal}</td>
+                                                <td className={"gNight" + user.user_id}>{user.data.find((el) => el.date == date)?.guest_night_meal}</td>
+                                            </React.Fragment>
+                                        })}
+
+                                    </>
+                                }
+                            </tr>
+
                         })}
-                    </tr>
-                    <tr>
-                        {data.map((user, index) => {
+                        <tr>
+                            <td rowSpan={3}>TOTAL</td>
+                            {data.map((user, index) => {
 
-                            return <React.Fragment key={index}>
+                                return <React.Fragment key={index}>
+                                    <td id={"dayTotal" + user.user_id}>x</td>
+                                    <td id={"nightTotal" + user.user_id}>Null2</td>
+                                    <td id={"gDayTotal" + user.user_id}>Null3</td>
+                                    <td id={"gNightTotal" + user.user_id}>Null4</td>
+                                </React.Fragment>
 
-                                <td>Day</td>
-                                <td>Night</td>
-                                <td>G. Day</td>
-                                <td>G. Night</td>
-                            </React.Fragment>;
-                        })}
+                            })}
 
-                    </tr>
-                </thead>
-                <tbody className="border *:border *:*:border *:*:px-5 *:*:py-2 border-black text-center">
+                        </tr>
+                        <tr>
 
+                            {data.map((user, index) => {
 
-                    {dates.map((date, index) => {
-                        return <tr key={index}>
-                            {
-                                <>
-                                    <td>{date}</td>
-                                    {data.map((user, index) => {
+                                return <React.Fragment key={index}>
 
-                                        return <React.Fragment key={index}>
-                                            <td className={"day" + user.user_id}   >{user.data.find((el) => el.date == date)?.day_meal}</td>
-                                            <td className={"night" + user.user_id} >{user.data.find((el) => el.date == date)?.night_meal}</td>
-                                            <td className={"gDay" + user.user_id}  >{user.data.find((el) => el.date == date)?.guest_day_meal}</td>
-                                            <td className={"gNight" + user.user_id}>{user.data.find((el) => el.date == date)?.guest_night_meal}</td>
-                                        </React.Fragment>
-                                    })}
-                                </>
-                            }
+                                    <td colSpan={2} id={"dayNightTotal" + user.user_id}></td>
+                                    <td colSpan={2} id={"gDayNightTotal" + user.user_id}>r</td>
+
+                                </React.Fragment>
+
+                            })}
+
+                        </tr>
+                        <tr>
+
+                            {data.map((user, index) => {
+
+                                return <React.Fragment key={index}>
+
+                                    <td colSpan={4} id={"Total" + user.user_id}>r</td>
+
+                                </React.Fragment>
+
+                            })}
+
                         </tr>
 
-                    })}
-                    <tr>
-                        <td rowSpan={3}>TOTAL</td>
-                        {data.map((user, index) => {
+                    </tbody>
+                </table>
+            </div>
 
-                            return <React.Fragment key={index}>
-                                <td id={"dayTotal" + user.user_id}>x</td>
-                                <td id={"nightTotal" + user.user_id}>Null2</td>
-                                <td id={"gDayTotal" + user.user_id}>Null3</td>
-                                <td id={"gNightTotal" + user.user_id}>Null4</td>
-                            </React.Fragment>
 
-                        })}
-
-                    </tr>
-                    <tr>
-
-                        {data.map((user, index) => {
-
-                            return <React.Fragment key={index}>
-
-                                <td colSpan={2} id={"dayNightTotal" + user.user_id}></td>
-                                <td colSpan={2} id={"gDayNightTotal" + user.user_id}>r</td>
-
-                            </React.Fragment>
-
-                        })}
-
-                    </tr>
-                    <tr>
-
-                        {data.map((user, index) => {
-
-                            return <React.Fragment key={index}>
-
-                                <td colSpan={4} id={"Total" + user.user_id}>r</td>
-
-                            </React.Fragment>
-
-                        })}
-                        
-                    </tr>
-
-                </tbody>
-            </table>
-
-                        
 
         </div>
     );
