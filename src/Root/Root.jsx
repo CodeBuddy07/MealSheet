@@ -7,9 +7,12 @@ const Root = () => {
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
 
-                <div className="p-5 flex gap-3 items-center">
+                <div className="p-5 py-3 rounded-b-md flex gap-3 fixed top-0 bg-white w-full items-center shadow-md">
                     <label htmlFor="my-drawer" className="drawer-button"><i className="fa-solid fa-lg fa-bars"></i></label>
                     <h1 className="font-semibold text-xl"><span className="text-green-500">Meal</span>Sheet</h1>
+                </div>
+                <div className="h-14 w-full mb-3 rounded-b-md bg-white">
+
                 </div>
                 <div>
                     <Outlet>
