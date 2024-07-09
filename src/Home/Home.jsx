@@ -57,19 +57,22 @@ const Home = () => {
 
     }
 
-    function getTotal(index) {
+    function getTotal(index,plot) {
 
-        let totalDay = 0;
+         let a = 0;
+        // const dayCells = document.querySelectorAll(index);
 
-        const dayCells = document.querySelectorAll(index);
+        //     dayCells.forEach(cell => {
+        //         const cellValue = parseFloat(cell.innerText) || 0;
 
-        dayCells.forEach(cell => {
-            const cellValue = parseFloat(cell.innerText) || 0;
+        //         totalDay += cellValue;
+        //     });
+        
+        const totalDay = data[index].data.map(x=> x.day_meal + a)
+       
 
-            totalDay += cellValue;
-        });
         console.log(totalDay);
-        return totalDay.toString();
+        return totalDay;
 
     }
 
@@ -77,62 +80,62 @@ const Home = () => {
     function calculateTotal() {
 
 
-        // for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
 
 
-        //     if (document.getElementById("dayTotal" + data[i].user_id)) {
-        //         //Day Total Calculation
-        //         const dayCells = document.querySelectorAll(`.day${data[i].user_id}`);
-        //         let totalDay = 0;
-        //         dayCells.forEach(cell => {
-        //             const cellValue = parseFloat(cell.innerText) || 0;
+            if (document.getElementById("dayTotal" + data[i].user_id)) {
+                //Day Total Calculation
+                const dayCells = document.querySelectorAll(`.day${data[i].user_id}`);
+                let totalDay = 0;
+                dayCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
 
-        //             totalDay += cellValue;
-        //         });
-        //         document.getElementById("dayTotal" + data[i].user_id).innerText = totalDay;
-
-
-        //         //Night Total Calculation
-        //         const nightCells = document.querySelectorAll(`.night${data[i].user_id}`);
-        //         let totalNight = 0;
-        //         nightCells.forEach(cell => {
-        //             const cellValue = parseFloat(cell.innerText) || 0;
-
-        //             totalNight += cellValue;
-        //         });
-        //         document.getElementById("nightTotal" + data[i].user_id).innerText = totalNight;
+                    totalDay += cellValue;
+                });
+                document.getElementById("dayTotal" + data[i].user_id).innerText = totalDay;
 
 
-        //         //Guest Day Total Calculation
-        //         const gDayCells = document.querySelectorAll(`.gDay${data[i].user_id}`);
-        //         let totalGDay = 0;
-        //         gDayCells.forEach(cell => {
-        //             const cellValue = parseFloat(cell.innerText) || 0;
+                //Night Total Calculation
+                const nightCells = document.querySelectorAll(`.night${data[i].user_id}`);
+                let totalNight = 0;
+                nightCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
 
-        //             totalGDay += cellValue;
-        //         });
-        //         document.getElementById("gDayTotal" + data[i].user_id).innerText = totalGDay;
-
-
-        //         //Guest Night Total Calculation
-        //         const gNightCells = document.querySelectorAll(`.gNight${data[i].user_id}`);
-        //         let totalGNight = 0;
-        //         gNightCells.forEach(cell => {
-        //             const cellValue = parseFloat(cell.innerText) || 0;
-
-        //             totalGNight += cellValue;
-        //         });
-        //         document.getElementById("gNightTotal" + data[i].user_id).innerText = totalGNight;
-
-        //         //Day-Night Total & Guest Day-Night Total Calculation
-        //         document.getElementById("dayNightTotal" + data[i].user_id).innerText = totalDay + totalNight;
-        //         document.getElementById("gDayNightTotal" + data[i].user_id).innerText = totalGDay + totalGNight;
-
-        //         document.getElementById("Total" + data[i].user_id).innerText = totalGDay + totalGNight + totalDay + totalNight;
-        //     }
+                    totalNight += cellValue;
+                });
+                document.getElementById("nightTotal" + data[i].user_id).innerText = totalNight;
 
 
-        // }
+                //Guest Day Total Calculation
+                const gDayCells = document.querySelectorAll(`.gDay${data[i].user_id}`);
+                let totalGDay = 0;
+                gDayCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
+
+                    totalGDay += cellValue;
+                });
+                document.getElementById("gDayTotal" + data[i].user_id).innerText = totalGDay;
+
+
+                //Guest Night Total Calculation
+                const gNightCells = document.querySelectorAll(`.gNight${data[i].user_id}`);
+                let totalGNight = 0;
+                gNightCells.forEach(cell => {
+                    const cellValue = parseFloat(cell.innerText) || 0;
+
+                    totalGNight += cellValue;
+                });
+                document.getElementById("gNightTotal" + data[i].user_id).innerText = totalGNight;
+
+                //Day-Night Total & Guest Day-Night Total Calculation
+                document.getElementById("dayNightTotal" + data[i].user_id).innerText = totalDay + totalNight;
+                document.getElementById("gDayNightTotal" + data[i].user_id).innerText = totalGDay + totalGNight;
+
+                document.getElementById("Total" + data[i].user_id).innerText = totalGDay + totalGNight + totalDay + totalNight;
+            }
+
+
+        }
 
     }
 
@@ -258,10 +261,10 @@ const Home = () => {
                             {data.map((user, index) => {
 
                                 return <React.Fragment key={index}>
-                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " > {getTotal(`.day${user.user_id}`)}</td>
-                                    <td id={"nightTotal" + user.user_id} className=" !border-black !border-t-2 " > {getTotal(`.night${user.user_id}`)}</td>
-                                    <td id={"gDayTotal" + user.user_id} className=" !border-black !border-t-2 " > {getTotal(`.gDay${user.user_id}`)}</td>
-                                    <td id={"gNightTotal" + user.user_id} className="!border-r-0 !border-t-2 !border-black">{getTotal(`.gNight${user.user_id}`)}</td>
+                                    <td id={"dayTotal" + user.user_id} className=" !border-black !border-t-2 " >{getTotal(index,"day_meal")}</td>
+                                    <td id={"nightTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
+                                    <td id={"gDayTotal" + user.user_id} className=" !border-black !border-t-2 " > </td>
+                                    <td id={"gNightTotal" + user.user_id} className="!border-r-0 !border-t-2 !border-black"></td>
                                 </React.Fragment>
 
                             })}
