@@ -88,7 +88,7 @@ const Bills = () => {
                             </div>
 
                             <div className="flex justify-center items-center  w-full px-5 mt-5">
-                                <input onChange={(e) => setSearchTerm(e.target.value)} className="border w-full bg-white rounded-full px-3 py-2 shadow-sm" type="search" name="searchBar" placeholder="search here..." />
+                                <input onChange={(e) => setSearchTerm(e.target.value +"," + bill.bill_name)} className="border w-full bg-white rounded-full px-3 py-2 shadow-sm" type="search" name="searchBar" placeholder="search here..." />
                                 <button className="bg-white rounded-full px-3 py-2 ml-2 shadow-sm"><i className="fa-solid fa-magnifying-glass"></i></button>
                             </div>
 
@@ -96,7 +96,7 @@ const Bills = () => {
                                 <ul className="w-full *:mt-2">
                                     {
 
-                                        data?.filter(x => x.user_name.toLowerCase().search(searchTerm.toLowerCase()) > -1).slice(0, 3).map((user, index) =>
+                                        data?.filter(x => searchTerm.includes(bill.bill_name) ? x.user_name.toLowerCase().search(searchTerm.replace(`,${bill.bill_name}`,"").toLowerCase()) > -1 : true).slice(0, 3).map((user, index) =>
                                             <li key={index} className="bg-blue-200 w-full  rounded-e-md rounded-tl-full rounded-bl-full flex justify-between items-center ">
                                                 <div className="flex justify-start items-center gap-3">
                                                     <img className="w-10 rounded-full border-2 border-blue-500" src="/Cat03.jpg" alt="" />
