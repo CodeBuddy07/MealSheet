@@ -4,6 +4,7 @@ import UserDashboard from "../UserDashboard/userDashboard";
 import Bazar from "../Bazar/Bazar";
 import Root from "../Root/Root";
 import Bills from "../Bills/Bills";
+import Task from "../Task/Task";
 
 
 
@@ -28,6 +29,10 @@ const Routes = createBrowserRouter([
         {
           path: "/bills",
           element: <Bills></Bills>,
+        },
+        {
+          path: "/tasks",
+          element: <Task></Task>,
         },
       ]
     }
