@@ -196,7 +196,7 @@ const Home = () => {
                 <button className="btn btn-sm bg-green-500 text-white px-7 rounded py-2" onClick={exportTableToExcel}>Export</button>
             </div>
             {loading ? <LoadingScreen></LoadingScreen> : <p></p>}
-            <div className="overflow-scroll rounded-md border-2 border-green-500 mt-2 -mx-4">
+            <div className="overflow-scroll rounded-md border-2 border-green-500 mt-2 -mx-4 text-xs">
                 <table hidden={loading ? true : false} id="myTable" className="w-full whitespace-nowrap">
                     <thead className=" *:border *:*:border *:*:border-t-0 *:*:px-5 *:*:py-2 text-center">
                         <tr className="[&>*:last-child]:border-r-0">
