@@ -121,7 +121,7 @@ const Bazar = () => {
                 <button onClick={()=>{setVisible3(false);document.getElementById("tableBody").innerHTML='';setSerial(1); document.getElementById("total").innerText= 0}} className="btn btn-sm bg-red-400 text-white">Cancel</button>
                 <button onClick={()=>{console.log(data[0].Bazar[0]['Rice'])}} className="btn btn-sm bg-green-400 text-white">Add</button>
             </div>
-            <div className={visible ? "bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen h-screen flex justify-center items-center" : "hidden"}>
+            <div className={visible ? "bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen bottom-0 flex justify-center items-center" : "hidden"}>
                 <div className="bg-white rounded-md p-3 w-[90%] mb-60">
                     <div className="w-full text-center my-5">
                         <h1 className="font-semibold">{item}</h1>
@@ -150,7 +150,7 @@ const Bazar = () => {
                 </div>
             </div>
 
-            <div className={visible2 ? "bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen h-screen flex justify-center items-center" : " hidden"}>
+            <div className={visible2 ? "bg-black/30 backdrop-blur-[1px] absolute top-0 right-0 left-0 w-screen bottom-0 flex justify-center items-center" : " hidden"}>
                 <div className="bg-white rounded-md p-3 w-[90%] mb-60">
                     <div>
                         <h1 className="font-semibold">Item Name</h1>

@@ -113,7 +113,7 @@ const Bills = () => {
                         </div>
                     )
                 }
-                <div className={visible ? "absolute bg-black/30 backdrop-blur-sm top-0 right-0 left-0  h-screen grid place-items-center " : "hidden"}>
+                <div className={visible ? "absolute bg-black/30 backdrop-blur-sm top-0 right-0 left-0  bottom-0 grid place-items-center " : "hidden"}>
                     <div className="bg-white rounded-md px-3 py-5 mb-60 w-[90%]">
 
                         <form onSubmit={formSubmit} >
