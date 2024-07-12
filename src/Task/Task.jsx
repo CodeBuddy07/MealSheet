@@ -1,5 +1,7 @@
+import "./Task.css"
 import { useEffect } from "react";
 import { useState } from "react";
+
 
 const Task = () => {
 
@@ -118,7 +120,7 @@ const Task = () => {
                                             <h1 className=" try font-bold text-sm w-2 text-ellipsis">{user.user_name}</h1>
                                             <div className="flex justify-center items-center gap-2">
                                                 <span className="text-xs font-bold">Assign Date: </span>
-                                                <input className=" bg-white rounded-md input-xs w-28 text-black" name={`${user.user_name}assignedDate`} defaultValue="mm/dd/yyyy" type="date" />
+                                                <input className=" bg-white rounded-md input-xs w-28 text-black" name={`${user.user_name}assignedDate`} defaultValue="DD/MM/YYYY" type="date" />
                                             </div>
                                         </div>
                                     </div>
