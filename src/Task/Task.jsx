@@ -74,14 +74,16 @@ const Task = () => {
                         <ul className="w-full *:mt-2">
                             {
                                 data.map(user => user.tasks?.filter(x => x.name == task).filter(x => searchTerm.includes(task) ? getWeekDay(x.assigned_date).toLowerCase().search(searchTerm.replace(`,${task}`, "").toLowerCase()) > -1 || getMonthDay(x.assigned_date).toString().search(searchTerm.replace(`,${task}`, "")) > -1 || user.user_name.toLowerCase().search(searchTerm.replace(`,${task}`, "").toLowerCase()) > -1 : x.name == task).map((y, index) =>
-                                    <li key={index} className="flex justify-between items-center w-full bg-blue-200 rounded-md px-3 py-2" >
-                                        <div className="text-center text-white">
-                                            <h1 className="text-3xl font-bold">{getMonthDay(y.assigned_date)}</h1>
-                                            <p className="font-semibold text-sm -pb-5">{getWeekDay(y.assigned_date)}</p>
-                                        </div>
+                                    <li key={index} className="flex justify-between items-center w-full bg-blue-200 rounded-md px-2 py-1" >
+                                        
                                         <div className="flex justify-start items-center gap-3">
-                                            <h1 className=" font-bold text-lg">{user.user_name}</h1>
-                                            <img className="w-12 rounded-full border-2 border-blue-500" src="/Cat03.jpg" alt="" />
+                                            
+                                            <img className="w-9 rounded-full border-2 border-blue-500" src="/Cat03.jpg" alt="" />
+                                            <h1 className=" font-bold">{user.user_name}</h1>
+                                        </div>
+                                        <div className="text-center text-white pr-3">
+                                            <h1 className="text-xl font-bold">{getMonthDay(y.assigned_date)}</h1>
+                                            <p className="font-normal text-xs ">{getWeekDay(y.assigned_date)}</p>
                                         </div>
                                     </li>
                                 ))
