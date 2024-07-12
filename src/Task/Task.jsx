@@ -111,11 +111,17 @@ const Task = () => {
                             data.map((user, index) =>
                                 <li key={index} className=" bg-blue-100 flex justify-between items-center px-3 py-2 rounded-md">
                                     <div className="flex justify-start items-center gap-3">
-                                        <img className="w-8 rounded-full border-2 border-blue-500" src="/Cat03.jpg" alt="" />
-                                        <h1 className=" try font-bold text-sm">{user.user_name}</h1>
+                                        <img className="w-12 rounded-lg border-2 border-blue-500" src="/Cat03.jpg" alt="" />
+                                        <div>
+                                            <h1 className=" try font-bold text-sm w-2 text-ellipsis">{user.user_name}</h1>
+                                            <div className="flex justify-center items-center gap-2">
+                                                <span className="text-xs font-bold">Assign Date: </span>
+                                                <input className=" bg-white rounded-md input-xs w-28 text-black" name={`${user.user_name}assignedDate`} defaultValue="mm/dd/yyyy" type="date" />
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <input className=" bg-white rounded-md input-xs w-28 text-black" name={`${user.user_name}assignedDate`} defaultValue="Select Date" type="date" />
+
                                 </li>)
                         }
 
