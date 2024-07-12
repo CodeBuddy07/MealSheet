@@ -1,0 +1,80 @@
+[
+    {
+        "Weekday": "Sat",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Sun",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Mon",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Tue",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Wed",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Thu",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Beef Curry"
+        ]
+    },
+    {
+        "Weekday": "Fri",
+        "Day": [
+            "Steam Rice",
+            "Beef Curry"
+        ],
+        "Night": [
+            "Steam Rice",
+            "Dal",
+            "Mashed Potato"
+        ]
+    }
+]

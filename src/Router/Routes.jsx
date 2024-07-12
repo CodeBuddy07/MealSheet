@@ -5,6 +5,7 @@ import Bazar from "../Bazar/Bazar";
 import Root from "../Root/Root";
 import Bills from "../Bills/Bills";
 import Task from "../Task/Task";
+import MealRoutine from "../MealRoutine/MealRoutine";
 
 
 
@@ -33,6 +34,10 @@ const Routes = createBrowserRouter([
         {
           path: "/tasks",
           element: <Task></Task>,
+        },
+        {
+          path: "/mealroutine",
+          element: <MealRoutine></MealRoutine>,
         },
       ]
     }
