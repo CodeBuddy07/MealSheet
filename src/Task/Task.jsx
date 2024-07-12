@@ -98,7 +98,7 @@ const Task = () => {
                     </div>
                 </div>
             )}
-            <div className={visible ? "bg-black/30 backdrop-blur-sm absolute top-0 right-0 left-0 bottom-0 grid place-items-center px-5 " : "hidden"}>
+            <div className={visible ? "bg-black/30 backdrop-blur-sm absolute top-0 right-0 left-0 bottom-0 min-h-screen grid place-items-center px-5 " : "hidden"}>
 
                 <form onSubmit={(e) => manageAdd(e)} className="bg-white rounded-md p-5 mt-5 mb-60 w-full">
 
