@@ -28,7 +28,8 @@ const MealRoutine = () => {
                 <img className="mt-2" src="curry.png" alt="" />
                 <ol className=" list-disc *:font-normal *:text-slate-800  w-full text-left border-l pl-7 border-black">
 
-                    {data.filter(x => x.Weekday == selected)[0]["Day"].map((meal, index) =>
+                    {/* {console.log(data.filter(x => x.Weekday == selected)[0]?.Day)} */}
+                    {data.filter(x => x.Weekday == selected)[0]?.Day?.map((meal, index) =>
                         <li key={index}>{meal} <span className="text-red-500"><i className="fa-regular fa-sm fa-trash-can"></i></span></li>
                     )}
                     <button className="btn-xs px-7 bg-green-300 shadow-sm rounded-md mt-2"><span className="text-white ">ADD <i className="fa-solid fa-lg fa-circle-plus"></i></span></button>
@@ -40,7 +41,7 @@ const MealRoutine = () => {
                 <img className="mt-2" src="curry.png" alt="" />
                 <ol className=" list-disc *:font-normal *:text-slate-800  w-full text-left  border-l pl-7 border-black">
 
-                    {data.filter(x => x.Weekday == selected)[0]["Night"].map((meal, index) =>
+                    {data.filter(x => x.Weekday == selected)[0]?.Night?.map((meal, index) =>
                         <li key={index}>{meal} <span className="text-red-500"><i className="fa-regular fa-sm fa-trash-can"></i></span></li>
                     )}
                     <button className="btn-xs px-7 bg-green-300 shadow-sm rounded-md mt-2"><span className="text-white ">ADD <i className="fa-solid fa-lg fa-circle-plus"></i></span></button>
