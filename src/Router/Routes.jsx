@@ -8,6 +8,7 @@ import Task from "../Task/Task";
 import MealRoutine from "../MealRoutine/MealRoutine";
 import Login from "../Login/Login";
 import SignUp from "../Signup/SignUp";
+import ManageMembers from "../ManageMembers/ManageMembers";
 
 
 
@@ -40,6 +41,10 @@ const Routes = createBrowserRouter([
         {
           path: "/mealroutine",
           element: <MealRoutine></MealRoutine>,
+        },
+        {
+          path: "/managemembers",
+          element: <ManageMembers></ManageMembers>,
         },
       ]
     },
