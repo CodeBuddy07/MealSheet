@@ -6,6 +6,8 @@ import Root from "../Root/Root";
 import Bills from "../Bills/Bills";
 import Task from "../Task/Task";
 import MealRoutine from "../MealRoutine/MealRoutine";
+import Login from "../Login/Login";
+import SignUp from "../Signup/SignUp";
 
 
 
@@ -40,6 +42,14 @@ const Routes = createBrowserRouter([
           element: <MealRoutine></MealRoutine>,
         },
       ]
+    },
+    {
+      path:"/login",
+      element:<Login></Login>
+    },
+    {
+      path:"/signup",
+      element:<SignUp></SignUp>
     }
   ]);
 

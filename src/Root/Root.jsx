@@ -24,7 +24,8 @@ const Root = () => {
                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
 
                 <ul className="menu bg-base-200 text-base-content min-h-full min-w-80 p-4">
-                    <div className=" text-right pr-2 pb-2">
+                    <div className=" flex justify-between items-center pr-2 pb-2">
+                        <h1 className="text-lg font-bold">Ghost House</h1>
                         <label htmlFor="my-drawer" className="drawer-button"><i className="fa-solid fa-lg fa-xmark"></i></label>
                     </div>
 
