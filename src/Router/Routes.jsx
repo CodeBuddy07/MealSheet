@@ -9,6 +9,7 @@ import MealRoutine from "../MealRoutine/MealRoutine";
 import Login from "../Login/Login";
 import SignUp from "../Signup/SignUp";
 import ManageMembers from "../ManageMembers/ManageMembers";
+import UserProtectedRoute from "../ProtectedRoutes/UserProtectedRoute";
 
 
 
@@ -20,7 +21,7 @@ const Routes = createBrowserRouter([
        
         {
           path: "/",
-          element: <Home></Home>,
+          element: <UserProtectedRoute><Home></Home></UserProtectedRoute>,
         },
         {
           path: "/bazar",
@@ -44,7 +45,7 @@ const Routes = createBrowserRouter([
         },
         {
           path: "/managemembers",
-          element: <ManageMembers></ManageMembers>,
+          element: <UserProtectedRoute><ManageMembers></ManageMembers></UserProtectedRoute>,
         },
       ]
     },

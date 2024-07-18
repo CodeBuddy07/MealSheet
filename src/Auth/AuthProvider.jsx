@@ -17,12 +17,12 @@ const AuthProvider = ({ children }) => {
 
     const provider = new GoogleAuthProvider();
 
-    const serverRootUrl= "http://localhost:5000"
+    const serverRootUrl = "http://localhost:5000"
 
     const googleSignUp = () => {
         setLoading(true);
         return signInWithPopup(auth, provider);
-            
+
     }
 
     const logOut = () => {
@@ -33,8 +33,10 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            
-            setUser(currentUser);
+
+
+
+
 
             if (currentUser) {
 
@@ -49,7 +51,20 @@ const AuthProvider = ({ children }) => {
                     })
             }
 
-            setLoading(false);
+            axios.get(serverRootUrl + "/verify?key=email&value=" + currentUser?.email)
+                .then(res => {
+                    if (res.data.status) {
+                        setUser(currentUser);
+                        setLoading(false);
+                    }else{
+                        setLoading(false)
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
+
         });
         return () => {
             return unsubscribe();

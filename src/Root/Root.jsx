@@ -1,7 +1,33 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Root = () => {
+
+    const { logOut } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+
+
+    location.state = location.pathname;
+
+    const x = () => {
+        logOut()
+            .then(()=>{
+                toast.success("User logged out",{theme: "colored", position: "top-center"})
+                navigate('/signup');
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
+
+
+
+
     return (
         <div className="drawer relative">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -126,13 +152,16 @@ const Root = () => {
                     <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/bills"}> <i className="fa-solid fa-rectangle-list"></i> <span className="text-black">Bills</span> </NavLink> </li>
                     <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/tasks"}> <i className="fa-solid fa-list-check"></i> <span className="text-black">Tasks</span> </NavLink> </li>
                     <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/mealroutine"}> <i className="fa-solid fa-burger"></i> <span className="text-black">Meal Routine</span> </NavLink> </li>
+                    <li ><NavLink className={({ isActive }) => isActive ? "bg-green-200 border-l-2 border-l-green-400 font-bold focus:bg-green-200 active:!bg-green-400 !text-green-500" : "focus:bg-green-200 active:!bg-green-400 text-slate-500"} to={"/managemembers"}> <i className="fa-solid fa-users"></i> <span className="text-black">Member Management</span> </NavLink> </li>
 
-
+                    <button onClick={x} className="w-full rounded-md bg-red-500 text-white py-2 font-bold mt-5"><i className="fa-solid fa-right-from-bracket"></i> Log Out</button>
 
                 </ul>
+
             </div>
         </div>
     );
-};
+}
+
 
 export default Root;
